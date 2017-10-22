@@ -1,0 +1,5 @@
+##忽略这些文件##
+.idea
+.idea/vcs.xml
+runtime
+web/assets
