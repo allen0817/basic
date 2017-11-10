@@ -126,6 +126,6 @@ class SiteController extends Controller
     }
 
     public function actionHello(){
-        echo "hello world";
+        echo "hello world!";
     }
 }
