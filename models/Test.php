@@ -17,6 +17,8 @@ class  Test extends  Model {
     private $name;
     private $age;
 
+    const EVENT_HELLO = 'hello';
+
     public function rules()
     {
         return [
@@ -36,6 +38,18 @@ class  Test extends  Model {
     }
     public function getName(){
         return $this->name;
+    }
+
+
+    public function hello($event){
+        echo "<pre>";
+        print_r($event->data);
+        echo  "hello allen!<br>";
+    }
+
+    public function sayHello($event){
+        echo $event->username,"<pre>";
+        echo "say hello!<br>";
     }
 
 }
