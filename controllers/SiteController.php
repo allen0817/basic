@@ -2,8 +2,11 @@
 
 namespace app\controllers;
 
+
+use app\models\Test;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -126,6 +129,36 @@ class SiteController extends Controller
     }
 
     public function actionHello(){
-        echo "hello world!";
+        echo "hello world!<br>";
+//        $lines = file('index.php');
+//
+//        foreach ($lines as $line_num => $line) {
+//            echo "Line #<b>{$line_num}</b> : " . htmlspecialchars($line) . "<br />\n";
+//        }
+
+        echo '<a href="'.Url::to(['post/index', 'year' => 2014, 'category' => 'php']).'">base</a>';
+
+//        Yii::$app->log->targets['file']->enabled = false;
+//        Yii::error("hello world");
+
+//        Yii::beginProfile('h1');
+//
+//
+//        Yii::endProfile('h1');
+
+        $test = new Test();
+
+        $test->name='boy';
+
+        echo $test->hobby;
+        echo "<br>";
+        echo "<br>";
+        echo Yii::getAlias('@bower');
+
+
+
+
+
+
     }
 }

@@ -12,6 +12,22 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'JOIWSWOHWHWY##SFJWOJ',
         ],
+
+//        'response' => [
+//            'class' => 'yii\web\Response',
+//            'on beforeSend' => function ($event) {
+//                $response = $event->sender;
+//                if ($response->data !== null) {
+//                    $response->data = [
+//                        'success' => $response->isSuccessful,
+//                        'data' => $response->data,
+//                    ];
+//                    $response->statusCode = 200;
+//                }
+//            },
+//        ],
+
+
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -32,22 +48,27 @@ $config = [
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
-                [
+                'file' =>  [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+//            'enableStrictParsing' => false,
             'rules' => [
-            ],
+
+            ]
         ],
-        */
+
+
     ],
+    //'defaultRoute' => 'site/hello',
+//    'catchAll' => ['site/login'],
     'params' => $params,
 ];
 
