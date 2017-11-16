@@ -42,14 +42,23 @@ class  Test extends  Model {
 
 
     public function hello($event){
+
         echo "<pre>";
         print_r($event->data);
         echo  "hello allen!<br>";
+
+
+
     }
 
     public function sayHello($event){
         echo $event->username,"<pre>";
         echo "say hello!<br>";
     }
+    public function bb($event)
+    {
+        echo "this is bb<br>";
+    }
+
 
 }

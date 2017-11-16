@@ -155,6 +155,13 @@ class SiteController extends Controller
         echo "<br>";
         echo Yii::getAlias('@bower');
 
+        echo "<br>";
+        $format = Yii::$app->formatter;
+        $format->locale = 'zh-CN';
+        echo $format->asDate(time(),'full');
+        echo "<br>";
+        echo $format->asDate('20140901');
+
 
 
 
