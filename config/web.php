@@ -2,6 +2,8 @@
 
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
+$sqlite = require(__DIR__ . '/sqlite.php');
+$mail = require (__DIR__ . '/mailer-local.php');
 
 $config = [
     'id' => 'basic',
@@ -56,6 +58,8 @@ $config = [
             ],
         ],
         'db' => $db,
+        'sqlite' => $sqlite,
+        'mailer' => $mail,
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

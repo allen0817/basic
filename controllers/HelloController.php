@@ -12,6 +12,8 @@ namespace app\controllers;
 use app\component\HelloEvent;
 use app\component\MyBehavior;
 use app\component\MyBehavior1;
+use app\models\LoginForm;
+use app\models\Member;
 use app\models\Test;
 use yii\web\Controller;
 use Yii;
@@ -28,6 +30,7 @@ class HelloController extends  Controller
         return [
 
             MyBehavior::className(),
+
 
         ];
     }
@@ -94,5 +97,51 @@ class HelloController extends  Controller
         }
 
     }
+
+    public function actionT(){
+//        $sqlite  =  Yii::$app->sqlite;
+//        $sql = "select * from member";
+//        $user = $sqlite->createCommand($sql)->queryOne();
+
+//        $member = new Member();
+//        $member->name = 'cat';
+//        $member->hobby = 'read';
+//        $member->save();
+
+        //$user = Member::find()->asArray()->all();
+//        $user = Member::find()->each(2);
+//
+//        echo "<pre>";
+//        print_r($user);
+
+        foreach (Member::find()->each(1) as $m){
+            echo $m->name,'<br>';
+        }
+
+
+        
+
+
+    }
+
+
+    public function actionMail(){
+        $model = new LoginForm();
+
+        $mail = Yii::$app->mailer->compose('/site/login',['model'=>$model,'name' => 'allen']);
+        $mail->setTo('1009336683@qq.com');
+        $mail->setSubject('login');
+        //$mail->setHtmlBody('<h1>hello world</h1>');
+
+
+//        for ($i=0;$i<1;$i++){
+//            $mail->send();
+//        }
+
+
+
+
+    }
+
 
 }
