@@ -162,10 +162,5 @@ class SiteController extends Controller
         echo "<br>";
         echo $format->asDate('20140901');
 
-
-
-
-
-
     }
 }

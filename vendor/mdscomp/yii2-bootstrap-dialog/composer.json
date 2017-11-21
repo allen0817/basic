@@ -1,0 +1,29 @@
+{
+    "name": "mzdani/yii2-bootstrap-dialog",
+    "description": "Yii2 Bootstrap3 Dialog Wrapper - Make use of Bootstrap Modal more monkey-friendly.",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "wrapper", "bootstrap3 dialog"],
+    "license": "BSD-3-Clause",
+    "version": "1.1.7",
+    "support": {
+        "issues": "https://bitbucket.org/mzdani/yii2-bootstrap-dialog/issues?status=new&status=open",
+        "source": "https://bitbucket.org/mzdani/yii2-bootstrap-dialog.git"
+    },
+    "authors": [
+        {
+            "name": "Mirdani Handoko",
+            "email": "admin@mdscomp.net",
+            "homepage": "https://www.mdscomp.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "bower-asset/bootstrap3-dialog": "~1.34"
+    },
+    "autoload": {
+        "psr-4": {
+            "mdscomp\\BootstrapDialog\\": ""
+        }
+    }
+}

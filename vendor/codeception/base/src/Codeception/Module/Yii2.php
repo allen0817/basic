@@ -366,7 +366,7 @@ class Yii2 extends Framework implements ActiveRecord, PartedModule
      * $users = $I->grabFixture('users');
      *
      * // get first user by key, if a fixture is instance of ActiveFixture
-     * $user = $I->grabFixture('users', 'user1');
+     * $user = $I->grabFixture('users', 'User');
      * ```
      *
      * @param $name

@@ -6,9 +6,9 @@ namespace Codeception\Util;
  *
  * ```php
  * <?php
- * Fixtures::add('user1', ['name' => 'davert']);
- * Fixtures::get('user1');
- * Fixtures::exists('user1');
+ * Fixtures::add('User', ['name' => 'davert']);
+ * Fixtures::get('User');
+ * Fixtures::exists('User');
  *
  * ?>
  * ```

@@ -14,7 +14,9 @@ use app\component\MyBehavior;
 use app\component\MyBehavior1;
 use app\models\LoginForm;
 use app\models\Member;
+use app\models\News;
 use app\models\Test;
+use yii\base\DynamicModel;
 use yii\web\Controller;
 use Yii;
 
@@ -31,9 +33,44 @@ class HelloController extends  Controller
 
             MyBehavior::className(),
 
+            [
+                'class' => 'yii\filters\HttpCache',
+                'only' => ['t'],
+//                'lastModified' => function ($action, $params) {
+//                    $q = new \yii\db\Query();
+//                    return $q->from('news')->max('id');
+//                },
+                'cacheControlHeader' => 'public, max-age=7200', //缓存策略
+
+                'etagSeed' => function ($action, $params) {
+                    return md5('yii-china.com');
+                },
+            ],
+
 
         ];
     }
+
+    public function actions()
+    {
+        return [
+            //文件 上传
+            'crop'=>[
+                'class' => 'hyii2\avatar\CropAction',
+                'config'=>[
+                    'bigImageWidth' => '1000',     //大图默认宽度
+                    'bigImageHeight' => '1000',    //大图默认高度
+                    'middleImageWidth'=> '600',   //中图默认宽度
+                    'middleImageHeight'=> '600',  //中图图默认高度
+                    'smallImageWidth' => '100',    //小图默认宽度
+                    'smallImageHeight' => '100',   //小图默认高度
+                    //头像上传目录（注：目录前不能加"/"）
+                    'uploadPath' => 'uploads/avatar',
+                ]
+            ]
+        ];
+    }
+
 
     public function actionIndex()
     {
@@ -86,10 +123,11 @@ class HelloController extends  Controller
         $test->m1();
 
         $password = '123';
+        //生成密码
         $hash = Yii::$app->getSecurity()->generatePasswordHash($password);
 
         echo $hash."<br>";
-
+        //解密
         if(Yii::$app->getSecurity()->validatePassword('123',$hash)){
             echo "success<br>";
         }else{
@@ -114,12 +152,38 @@ class HelloController extends  Controller
 //        echo "<pre>";
 //        print_r($user);
 
+
+        //加密
+        $data = '123';
+        $key = 'ADFWrw3425工EON##FF@@pw';
+        $encrypt = Yii::$app->getSecurity()->encryptByPassword($data,$key);
+
+        //解密
+        $c = Yii::$app->getSecurity()->decryptByPassword($encrypt,$key);
+
+//        echo $encrypt,'<br>',$c;
+//        die;
+
         foreach (Member::find()->each(1) as $m){
-            echo $m->name,'<br>';
+            //echo $m->name,'<br>';
         }
 
 
-        
+        $params = array('name','email','password','captcha');
+
+        $model = DynamicModel::validateData($params,[
+            [['name','password','email','captcha'],'required'],
+            [['email'],'email','message'=>'邮箱不正确'],
+            [['name'],'string','message'=>'名字不能为空'],
+            [['captcha'],'captcha','message'=>'error'],
+        ]);
+
+
+
+
+        return $this->render('t',['model'=>$model]);
+
+
 
 
     }
@@ -137,10 +201,11 @@ class HelloController extends  Controller
 //        for ($i=0;$i<1;$i++){
 //            $mail->send();
 //        }
+    }
 
 
-
-
+    public function actionUpload(){
+        return $this->render('upload');
     }
 
 

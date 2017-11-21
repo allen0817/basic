@@ -57,4 +57,67 @@ return array (
       '@yii/httpclient' => $vendorDir . '/yiisoft/yii2-httpclient',
     ),
   ),
+  'liyunfang/yii2-contextmenu' => 
+  array (
+    'name' => 'liyunfang/yii2-contextmenu',
+    'version' => '1.0.5.0',
+    'alias' => 
+    array (
+      '@liyunfang/contextmenu' => $vendorDir . '/liyunfang/yii2-contextmenu',
+    ),
+  ),
+  'kartik-v/yii2-krajee-base' => 
+  array (
+    'name' => 'kartik-v/yii2-krajee-base',
+    'version' => '1.8.9.0',
+    'alias' => 
+    array (
+      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base',
+    ),
+  ),
+  'kartik-v/yii2-grid' => 
+  array (
+    'name' => 'kartik-v/yii2-grid',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid',
+    ),
+  ),
+  'kartik-v/yii2-dialog' => 
+  array (
+    'name' => 'kartik-v/yii2-dialog',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/dialog' => $vendorDir . '/kartik-v/yii2-dialog',
+    ),
+  ),
+  'mdscomp/yii2-bootstrap-dialog' => 
+  array (
+    'name' => 'mdscomp/yii2-bootstrap-dialog',
+    'version' => '1.1.7.0',
+    'alias' => 
+    array (
+      '@mdscomp/BootstrapDialog' => $vendorDir . '/mdscomp/yii2-bootstrap-dialog',
+    ),
+  ),
+  'hyii2/yii2-avatar' => 
+  array (
+    'name' => 'hyii2/yii2-avatar',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@hyii2/avatar' => $vendorDir . '/hyii2/yii2-avatar',
+    ),
+  ),
+  'mdmsoft/yii2-admin' => 
+  array (
+    'name' => 'mdmsoft/yii2-admin',
+    'version' => '2.8.0.0',
+    'alias' => 
+    array (
+      '@mdm/admin' => $vendorDir . '/mdmsoft/yii2-admin',
+    ),
+  ),
 );

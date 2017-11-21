@@ -9,7 +9,51 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'modules' => [
+        'gridview' =>  [
+            'class' => '\kartik\grid\Module'
+        ],
+
+
+        'admin' => [
+            //'class' => 'mdm\admin\Module',
+            //'layout' => 'left-menu',         //yii2-admin的导航菜单
+
+            'class' => 'app\modules\admin\Module',
+            'layout' => 'left-menu',         //yii2-admin的导航菜单
+
+        ],
+
+
+    ],
+
+
+
+//    'aliases' => [
+//        '@mdm/admin' => '@vendor/mdmsoft/yii2-admin',
+//    ],
+
+    'as access' => [
+        //'class' => 'mdm\admin\components\AccessControl',
+        'class' => 'app\modules\admin\components\AccessControl',
+        'allowActions' => [
+            'admin/*',            //配置允许权限
+            '*',
+        ]
+    ],
+
+
     'components' => [
+
+
+        'authManager' => [
+            'class' => 'app\modules\admin\components\DbManager',
+            'defaultRoles' => ['guest'],
+        ],
+
+
+
+
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'JOIWSWOHWHWY##SFJWOJ',

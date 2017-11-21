@@ -68,12 +68,12 @@ abstract class TestsForDb extends \Codeception\Test\Unit
     {
         $this->module->seeNumRecords(1, 'users', ['name' => 'davert']);
         $this->module->seeNumRecords(0, 'users', ['name' => 'davert', 'email' => 'xxx@yyy.zz']);
-        $this->module->seeNumRecords(0, 'users', ['name' => 'user1']);
+        $this->module->seeNumRecords(0, 'users', ['name' => 'User']);
     }
 
     public function testDontSeeInDatabase()
     {
-        $this->module->dontSeeInDatabase('users', ['name' => 'user1']);
+        $this->module->dontSeeInDatabase('users', ['name' => 'User']);
     }
 
     public function testDontSeeInDatabaseWithEmptyTable()
@@ -152,7 +152,7 @@ abstract class TestsForDb extends \Codeception\Test\Unit
         $this->assertEquals($num, 1);
         $num = $this->module->grabNumRecords('users', ['name' => 'davert', 'email' => 'xxx@yyy.zz']);
         $this->assertEquals($num, 0);
-        $num = $this->module->grabNumRecords('users', ['name' => 'user1']);
+        $num = $this->module->grabNumRecords('users', ['name' => 'User']);
         $this->assertEquals($num, 0);
     }
 
@@ -182,14 +182,14 @@ abstract class TestsForDb extends \Codeception\Test\Unit
     public function testUpdateInDatabase()
     {
         $this->module->seeInDatabase('users', ['name' => 'davert']);
-        $this->module->dontSeeInDatabase('users', ['name' => 'user1']);
+        $this->module->dontSeeInDatabase('users', ['name' => 'User']);
         
-        $this->module->updateInDatabase('users', ['name' => 'user1'], ['name' => 'davert']);
+        $this->module->updateInDatabase('users', ['name' => 'User'], ['name' => 'davert']);
         
         $this->module->dontSeeInDatabase('users', ['name' => 'davert']);
-        $this->module->seeInDatabase('users', ['name' => 'user1']);
+        $this->module->seeInDatabase('users', ['name' => 'User']);
         
-        $this->module->updateInDatabase('users', ['name' => 'davert'], ['name' => 'user1']);
+        $this->module->updateInDatabase('users', ['name' => 'davert'], ['name' => 'User']);
     }
 
     public function testInsertInDatabase()
