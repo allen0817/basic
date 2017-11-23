@@ -18,7 +18,6 @@ $config = [
         'admin' => [
             //'class' => 'mdm\admin\Module',
             //'layout' => 'left-menu',         //yii2-admin的导航菜单
-
             'class' => 'app\modules\admin\Module',
             'layout' => 'left-menu',         //yii2-admin的导航菜单
 

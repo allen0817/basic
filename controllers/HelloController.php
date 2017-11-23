@@ -9,6 +9,8 @@
 namespace app\controllers;
 
 
+use app\common\classes\AnimalFactory;
+use app\component\Compute;
 use app\component\HelloEvent;
 use app\component\MyBehavior;
 use app\component\MyBehavior1;
@@ -208,5 +210,56 @@ class HelloController extends  Controller
         return $this->render('upload');
     }
 
+    public function actionSearch(){
+
+        $arr = array(1,3,2,7,8,3,5,24,65,4,78,45,5,3242,23,535,334,234,678,9,8968,67,43,24,90,2367,545,89,34,5,45);
+
+
+        $response = Yii::$app->response;
+        $response->statusCode = 200;
+//        $response->content='<h1>hello allen</h1>';
+//        $response->send();
+
+//        throw  new  \yii\web\NotFoundHttpException;
+
+
+//        ob_clean();
+//        $f = fopen('index.php','r+');
+//        $response->sendStreamAsFile($f,'bb')->send();
+
+        $data = '123';
+        $secretKey = 'aa';
+        $encryptedData = Yii::$app->getSecurity()->encryptByPassword($data, $secretKey);
+
+        $data = Yii::$app->getSecurity()->decryptByPassword($encryptedData, $secretKey);
+
+        echo $encryptedData,'<hr>',$data,'<hr>';
+
+
+        $animal = AnimalFactory::create('Dog');
+        $animal->eat();
+
+        $animal = AnimalFactory::create('Cat');
+        $animal->eat();
+
+
+
+
+
+
+       // return $this->render('index');
+
+
+
+
+    }
+
+
+    public function actionJump(){
+        sleep(3);
+
+        return Yii::$app->response->redirect('t',200);
+
+    }
 
 }
