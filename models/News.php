@@ -54,4 +54,7 @@ class News extends \yii\db\ActiveRecord
     {
         return $this->hasOne(NewsDetail::className(), ['id' => 'id']);
     }
+
+
+
 }

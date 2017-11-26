@@ -17,6 +17,28 @@
 ?>
 
 
-<?= \hyii2\avatar\AvatarWidget::widget(['imageUrl'=>'/images/gril.jpg']); ?>
+<?= \hyii2\avatar\AvatarWidget::widget(['imageUrl' => Yii::getAlias('@web').'/images/gril.jpg']); ?>
 
 
+<?php $form = \yii\widgets\ActiveForm::begin(); ?>
+
+
+
+<?php
+
+echo '<label class="control-label">Add Attachments</label>';
+echo \kartik\file\FileInput::widget([
+    'model' => $model,
+    'attribute' => 'pics',
+    'options' => ['multiple' => true,],
+    'pluginOptions' => [
+        'languages' => 'zh'
+    ]
+]);
+
+?>
+
+
+
+
+<?php \yii\widgets\ActiveForm::end() ?>

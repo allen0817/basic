@@ -15,6 +15,7 @@ class  Dog implements Animal
     {
         // TODO: Implement eat() method.
         echo "dog eating....<br>";
+
     }
 
     public function sing()

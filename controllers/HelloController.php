@@ -10,6 +10,7 @@ namespace app\controllers;
 
 
 use app\common\classes\AnimalFactory;
+use app\common\classes\OnlyOne;
 use app\component\Compute;
 use app\component\HelloEvent;
 use app\component\MyBehavior;
@@ -69,7 +70,8 @@ class HelloController extends  Controller
                     //头像上传目录（注：目录前不能加"/"）
                     'uploadPath' => 'uploads/avatar',
                 ]
-            ]
+            ],
+
         ];
     }
 
@@ -207,7 +209,17 @@ class HelloController extends  Controller
 
 
     public function actionUpload(){
-        return $this->render('upload');
+
+        Yii::$app->i18n->translations['rbac-admin'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'sourceLanguage' => 'cn',
+            'basePath' => '@app/modules/admin/messages',
+
+        ];
+
+        $model = new Test();
+
+        return $this->render('upload',['model' => $model]);
     }
 
     public function actionSearch(){
@@ -243,14 +255,28 @@ class HelloController extends  Controller
         $animal->eat();
 
 
+        //测试单例模式 start
+        OnlyOne::getInstance()->hello("allen");
+        OnlyOne::getInstance()->hello("cat");
+        $news = new \app\common\classes\Test();
+        $news->news('a');
+        $news->news('b');
+        $this->a();
+        //测试单例模式 end
 
 
 
 
-       // return $this->render('index');
+
+        // return $this->render('index');
 
 
+    }
 
+    public function a(){
+        OnlyOne::getInstance()->hello("cc");
+        $news = new \app\common\classes\Test();
+        $news->news('c');
 
     }
 

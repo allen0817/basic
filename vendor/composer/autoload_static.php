@@ -42,7 +42,9 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
         ),
         'k' => 
         array (
+            'kartik\\plugins\\fileinput\\' => 25,
             'kartik\\grid\\' => 12,
+            'kartik\\file\\' => 12,
             'kartik\\dialog\\' => 14,
             'kartik\\base\\' => 12,
         ),
@@ -147,9 +149,17 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
         array (
             0 => __DIR__ . '/..' . '/liyunfang/yii2-contextmenu',
         ),
+        'kartik\\plugins\\fileinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
+        ),
         'kartik\\grid\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-grid',
+        ),
+        'kartik\\file\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput',
         ),
         'kartik\\dialog\\' => 
         array (

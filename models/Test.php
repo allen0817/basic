@@ -16,6 +16,7 @@ class  Test extends  Model {
 
     private $name;
     private $age;
+    public $pics;
 
     const EVENT_HELLO = 'hello';
 
