@@ -19,6 +19,7 @@ use app\models\LoginForm;
 use app\models\Member;
 use app\models\News;
 use app\models\Test;
+use app\models\Test1;
 use yii\base\DynamicModel;
 use yii\web\Controller;
 use Yii;
@@ -285,6 +286,36 @@ class HelloController extends  Controller
         sleep(3);
 
         return Yii::$app->response->redirect('t',200);
+
+    }
+
+
+    public function actionTest(){
+        echo date('H:i:s'),'<br>';
+
+
+
+
+        for ($i=0;$i<100;$i++){
+            sleep(1);
+            $m = new Test1();
+            $m->name = 'test_'.$i;
+            $m->number = mt_rand(10000,99999);
+            $m->time = time();
+            $m->detail = 'hello world';
+
+            $m->save(false);
+        }
+
+
+        echo date('H:i:s'),'<br>';
+
+
+
+
+
+
+
 
     }
 

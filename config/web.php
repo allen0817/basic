@@ -41,8 +41,13 @@ $config = [
         ]
     ],
 
+    'timeZone'=>'Asia/Shanghai',
+    'language' => 'zh-CN',
 
     'components' => [
+
+
+
 
 
         'authManager' => [
