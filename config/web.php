@@ -8,7 +8,7 @@ $mail = require (__DIR__ . '/mailer-local.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log','queue'],
     'modules' => [
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
@@ -46,7 +46,11 @@ $config = [
 
     'components' => [
 
-
+        'queue' => [
+            'class' => \yii\queue\redis\Queue::class,
+            'as log' => \yii\queue\LogBehavior::class,
+            // 驱动的其他选项
+        ],
 
 
 
