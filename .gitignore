@@ -7,5 +7,4 @@ web/assets
 # OS generated files #
 .DS_Store
 .DS_Store?
-vendor/kartik-v/yii2-grid/
-vendor/kartik-v/yii2-dialog/
+
