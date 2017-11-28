@@ -23,6 +23,10 @@ $config = [
 
         ],
 
+        'migration' => [
+            'class' => 'c006\utility\migration\Module',
+        ],
+
 
     ],
 
@@ -50,6 +54,12 @@ $config = [
             'class' => \yii\queue\redis\Queue::class,
             'as log' => \yii\queue\LogBehavior::class,
             // 驱动的其他选项
+        ],
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => 'localhost',
+            'port' => 6379,
+            'database' => 0,
         ],
 
 

@@ -19,6 +19,7 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
         'y' => 
         array (
             'yii\\swiftmailer\\' => 16,
+            'yii\\redis\\' => 10,
             'yii\\queue\\sync\\' => 15,
             'yii\\queue\\redis\\' => 16,
             'yii\\queue\\gearman\\' => 18,
@@ -60,9 +61,14 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
         array (
             'hyii2\\avatar\\' => 13,
         ),
+        'e' => 
+        array (
+            'e282486518\\migration\\' => 21,
+        ),
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
+            'c006\\utility\\migration\\' => 23,
         ),
         'W' => 
         array (
@@ -111,6 +117,10 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
         'yii\\swiftmailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer',
+        ),
+        'yii\\redis\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-redis',
         ),
         'yii\\queue\\sync\\' => 
         array (
@@ -214,9 +224,17 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
         array (
             0 => __DIR__ . '/..' . '/hyii2/yii2-avatar',
         ),
+        'e282486518\\migration\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/e282486518/yii2-console-migration',
+        ),
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'c006\\utility\\migration\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/c006/yii2-migration-utility',
         ),
         'Webmozart\\Assert\\' => 
         array (

@@ -10,6 +10,8 @@ namespace app\controllers;
 
 
 use app\common\classes\AnimalFactory;
+use app\common\classes\DownloadJob;
+use app\common\classes\InsertTest;
 use app\common\classes\OnlyOne;
 use app\component\Compute;
 use app\component\HelloEvent;
@@ -291,12 +293,35 @@ class HelloController extends  Controller
 
 
     public function actionTest(){
-        echo date('H:i:s'),'<br>';
+//        echo date('H:i:s'),'<br>';
 
 
 
+//
 
-        for ($i=0;$i<100;$i++){
+
+
+//        echo date('H:i:s'),'<br>';
+
+//        Yii::$app->queue->delay(5)->push(new DownloadJob([
+//            'url' => 'http://www.yiichina.com/images/logo.png',
+//            'file' => Yii::getAlias('@web').'a.png',
+//        ]));
+
+
+        Yii::$app->queue->push(
+            new InsertTest()
+        );
+
+
+
+        return $this->render('test');
+
+    }
+
+
+    public function m(){
+        for ($i=0;$i<5;$i++){
             sleep(1);
             $m = new Test1();
             $m->name = 'test_'.$i;
@@ -306,17 +331,7 @@ class HelloController extends  Controller
 
             $m->save(false);
         }
-
-
-        echo date('H:i:s'),'<br>';
-
-
-
-
-
-
-
-
     }
+
 
 }

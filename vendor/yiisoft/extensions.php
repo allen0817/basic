@@ -145,4 +145,31 @@ return array (
       '@yii/queue/sync' => $vendorDir . '/yiisoft/yii2-queue/src/drivers/sync',
     ),
   ),
+  'yiisoft/yii2-redis' => 
+  array (
+    'name' => 'yiisoft/yii2-redis',
+    'version' => '2.0.6.0',
+    'alias' => 
+    array (
+      '@yii/redis' => $vendorDir . '/yiisoft/yii2-redis',
+    ),
+  ),
+  'c006/yii2-migration-utility' => 
+  array (
+    'name' => 'c006/yii2-migration-utility',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@c006/utility/migration' => $vendorDir . '/c006/yii2-migration-utility',
+    ),
+  ),
+  'e282486518/yii2-console-migration' => 
+  array (
+    'name' => 'e282486518/yii2-console-migration',
+    'version' => '1.3.0.0',
+    'alias' => 
+    array (
+      '@e282486518/migration' => $vendorDir . '/e282486518/yii2-console-migration',
+    ),
+  ),
 );
