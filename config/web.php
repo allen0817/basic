@@ -23,9 +23,6 @@ $config = [
 
         ],
 
-        'migration' => [
-            'class' => 'c006\utility\migration\Module',
-        ],
 
 
     ],
@@ -60,6 +57,10 @@ $config = [
             'hostname' => 'localhost',
             'port' => 6379,
             'database' => 0,
+        ],
+
+        'redis_cache' => [
+            'class' => \yii\redis\Cache::className(),
         ],
 
 

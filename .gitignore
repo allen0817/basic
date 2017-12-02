@@ -8,3 +8,7 @@ web/assets
 .DS_Store
 .DS_Store?
 
+vendor/kartik-v/yii2-widget-fileinput/
+vendor/kartik-v/yii2-grid/
+vendor/kartik-v/yii2-dialog/
+vendor/e282486518/yii2-console-migration/
