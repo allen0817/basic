@@ -23,6 +23,7 @@ use app\models\News;
 use app\models\Test;
 use app\models\Test1;
 use yii\base\DynamicModel;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use Yii;
 
@@ -51,6 +52,13 @@ class HelloController extends  Controller
                 'etagSeed' => function ($action, $params) {
                     return md5('yii-china.com');
                 },
+            ],
+
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    //'test' => ['post']
+                ],
             ],
 
 
@@ -186,14 +194,11 @@ class HelloController extends  Controller
         ]);
 
 
-
-
         return $this->render('t',['model'=>$model]);
 
-
-
-
     }
+
+
 
 
     public function actionMail(){
@@ -294,15 +299,7 @@ class HelloController extends  Controller
 
     public function actionTest(){
 //        echo date('H:i:s'),'<br>';
-
-
-
-//
-
-
-
 //        echo date('H:i:s'),'<br>';
-
 //        Yii::$app->queue->delay(5)->push(new DownloadJob([
 //            'url' => 'http://www.yiichina.com/images/logo.png',
 //            'file' => Yii::getAlias('@web').'a.png',
@@ -331,6 +328,23 @@ class HelloController extends  Controller
 
             $m->save(false);
         }
+    }
+
+
+    public function actionRed(){
+        // Yii::$app->redis_cache->set('name','allen');
+        echo Yii::$app->redis_cache->get('name');
+    }
+
+    public function actionWeb(){
+
+
+       // snmpget("127.0.0.1", "public", " 1.3.6.1.2.1.1.4.0");
+
+
+        //echo Yii::$app->request->userIP;
+
+
     }
 
 

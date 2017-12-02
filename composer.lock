@@ -266,45 +266,6 @@
             "time": "2017-10-12T10:11:14+00:00"
         },
         {
-            "name": "c006/yii2-migration-utility",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/c006/yii2-migration-utility.git",
-                "reference": "0fe138a64343bba58a98eee7689b45e990405038"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://files.phpcomposer.com/files/c006/yii2-migration-utility/0fe138a64343bba58a98eee7689b45e990405038.zip",
-                "reference": "0fe138a64343bba58a98eee7689b45e990405038",
-                "shasum": ""
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "c006\\utility\\migration\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jon Chambers",
-                    "email": "jchambers.dev@gmail.com"
-                }
-            ],
-            "description": "Automatically writes the create tables for migrations or create tables in general",
-            "keywords": [
-                "extension",
-                "migration",
-                "tables",
-                "yii2"
-            ],
-            "time": "2017-07-17T19:51:55+00:00"
-        },
-        {
             "name": "cebe/markdown",
             "version": "1.1.2",
             "source": {
@@ -4094,8 +4055,7 @@
         "kartik-v/yii2-grid": 20,
         "kartik-v/yii2-dialog": 20,
         "hyii2/yii2-avatar": 20,
-        "kartik-v/yii2-widget-fileinput": 20,
-        "c006/yii2-migration-utility": 20
+        "kartik-v/yii2-widget-fileinput": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
