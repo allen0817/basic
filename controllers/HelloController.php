@@ -22,6 +22,7 @@ use app\models\Member;
 use app\models\News;
 use app\models\Test;
 use app\models\Test1;
+use moonland\phpexcel\Excel;
 use yii\base\DynamicModel;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
@@ -63,6 +64,18 @@ class HelloController extends  Controller
 
 
         ];
+    }
+
+
+    public function beforeAction($action){
+
+        if(  parent::beforeAction($action)){
+
+            echo "<hr><pre>";
+            print_r(Yii::$app     );
+        }
+
+
     }
 
     public function actions()
@@ -339,10 +352,17 @@ class HelloController extends  Controller
     public function actionWeb(){
 
 
-       // snmpget("127.0.0.1", "public", " 1.3.6.1.2.1.1.4.0");
+        header("Content-Type:text/html;charset=utf8");
 
 
-        //echo Yii::$app->request->userIP;
+        $file =  'excel/01.xls';
+
+
+
+
+        $a=Excel::import($file,['setFirstRecordAsKeys' => true]);
+
+        print_r($a);
 
 
     }

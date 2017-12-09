@@ -27,6 +27,8 @@ $config = [
 
     ],
 
+    'name' => 'allen',
+
 
 
 //    'aliases' => [

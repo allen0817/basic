@@ -28,7 +28,8 @@
         "kartik-v/yii2-widget-fileinput": "@dev",
         "yiisoft/yii2-queue": "^2.0",
         "yiisoft/yii2-redis": "^2.0",
-        "e282486518/yii2-console-migration": "*"
+        "e282486518/yii2-console-migration": "*",
+        "moonlandsoft/yii2-phpexcel": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

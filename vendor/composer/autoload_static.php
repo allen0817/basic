@@ -42,6 +42,7 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
         ),
         'm' => 
         array (
+            'moonland\\phpexcel\\' => 18,
             'mdscomp\\BootstrapDialog\\' => 24,
             'mdm\\admin\\' => 10,
         ),
@@ -68,7 +69,6 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
-            'c006\\utility\\migration\\' => 23,
         ),
         'W' => 
         array (
@@ -188,6 +188,10 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
+        'moonland\\phpexcel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/moonlandsoft/yii2-phpexcel',
+        ),
         'mdscomp\\BootstrapDialog\\' => 
         array (
             0 => __DIR__ . '/..' . '/mdscomp/yii2-bootstrap-dialog',
@@ -231,10 +235,6 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
-        ),
-        'c006\\utility\\migration\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/c006/yii2-migration-utility',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -324,6 +324,10 @@ class ComposerStaticInit1996f2612e598411b70db2cb8d765ba9
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+            ),
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
             ),
         ),
         'H' => 
