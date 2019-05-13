@@ -41,6 +41,7 @@ class HelloController extends  Controller
 
             MyBehavior::className(),
 
+
             [
                 'class' => 'yii\filters\HttpCache',
                 'only' => ['t'],
@@ -71,8 +72,7 @@ class HelloController extends  Controller
 
         if(  parent::beforeAction($action)){
 
-            echo "<hr><pre>";
-            print_r(Yii::$app     );
+            return true;
         }
 
 
@@ -350,20 +350,58 @@ class HelloController extends  Controller
     }
 
     public function actionWeb(){
-
-
         header("Content-Type:text/html;charset=utf8");
+        $file =  'excel/4.xls';
+        $xls = Excel::import($file,['setFirstRecordAsKeys' => true]);
+
+        $data =  [];
+        foreach ($xls as $v){
+            $data[] = array(
+                'name' => $v['课程'],
+                'title' => $v['题型'],
+                'que' => $v['题干'],
+                'a' => $v['A'],
+                'b' => $v['B'],
+                'c' => $v['C'],
+                'd' => $v['D'],
+                'answer' => $v['正确答案'],
+                'analysis' => $v['答案解析'],
+            );
+        }
+//        Yii::$app->db->createCommand()->batchInsert('kaiji',[
+//            'name','title','que','a','b','c','d','answer','analysis'
+//        ],$data)->execute();
 
 
-        $file =  'excel/01.xls';
+    }
 
 
 
+    public function actionO()
+    {
+       if ( method_exists($this,'bb') ) echo 1;
 
-        $a=Excel::import($file,['setFirstRecordAsKeys' => true]);
 
-        print_r($a);
+        if (ob_get_level() == 0) ob_start();
 
+        for ($i = 0; $i<80; $i++){
+
+            echo "<br> Line to show.";
+            echo str_pad('',4096)."\n";
+
+            ob_flush();
+            flush();
+            sleep(2);
+        }
+
+        echo "Done.";
+
+        ob_end_flush();
+
+
+    }
+
+    public function bb(){
 
     }
 
