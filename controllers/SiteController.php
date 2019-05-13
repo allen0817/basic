@@ -146,6 +146,8 @@ class SiteController extends Controller
 //
 //        Yii::endProfile('h1');
 
+        echo 111;
+
         $test = new Test();
 
         $test->name='boy';
