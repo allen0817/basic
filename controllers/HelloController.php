@@ -123,6 +123,8 @@ class HelloController extends  Controller
         $hello->age = 20;
 
 
+        echo 111;
+
 
 
         $test->on(self::HELLO_EVENT,[$test,HelloEvent::SAY_HELLO]);
